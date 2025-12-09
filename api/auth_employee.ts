@@ -1,10 +1,4 @@
-// ---------------------------------------------
-// API: auth_employee.ts
-// Vérification d’un employé par token
-// Compatible Edge Runtime (Vercel 2025)
-// ---------------------------------------------
-
-import { createClient } from "@supabase/supabase-js/edge";
+import { createClient } from "@supabase/supabase-js";
 
 export const config = {
   runtime: "edge",
@@ -23,10 +17,7 @@ export default async function handler(req: Request) {
 
     const supabase = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      {
-        global: { fetch }
-      }
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
     const { data, error } = await supabase
