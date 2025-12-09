@@ -1,0 +1,8 @@
+{
+  "name": "empreinte-verif-api",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "latest"
+  }
+}
